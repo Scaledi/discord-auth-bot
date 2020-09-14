@@ -20,3 +20,14 @@ users can ping the auth bot a valid key stored in `keys.txt`. the bot then:
 3. [create a discord bot](https://discord.com/developers/applications) and invite it to your server
 
 4. change the client secret vars to the secret
+
+5. distribute one key to each person
+
+# How to use
+
+Mention the bot followed by nothing but a space and your key in the server. `@discordbot#2222 12345`
+
+# Roadmap
+
+* Finish the bot
+* create a script to generate keys automaticly
