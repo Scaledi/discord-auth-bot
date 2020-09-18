@@ -35,12 +35,12 @@ while ovrCorrect == False:
 print("""great! we got all that. we will make changes inside a file in the same folder as this program. the file will be named "keys.txt"! for next steps, refer to "INSTRUCTIONS.md".""")
 # endregion
 # region: Output to file
-def get_random_alphanumeric_string(length):
+def getrndstr(length):
     letters_and_digits = string.ascii_uppercase + string.digits
     result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
     keytxt.write(result_str + "\n")
 
 while keynum > 0:
-    get_random_alphanumeric_string(int(6))
+    getrndstr(int(6))
     keynum = keynum - 1
 # endregion
