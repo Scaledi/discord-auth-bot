@@ -63,7 +63,14 @@ Welcome!
 1. create a new channel
 2. right click on the channel, select premissins, select the bot role and then enable "Read Text Channels & See Voice Channels", "Send Messages", and "Manage Roles" for the bot.
 
-#### 2.2.3 (Renaming)
+### 2.4 (Invite the bot)
+
+1. visit https://discord.com/developers/applications and go to the bot
+2. click "General Information"
+3. Copy "Client ID"
+4. replace the marked bit of this url https://discord.com/oauth2/authorize?client_id=REPLACETHISWITHWHATYOUCOPIED&scope=bot and go to it.
+
+### 2.5 (Renaming)
 
 1. rename `configtemplate.py` to `config.py`
 
