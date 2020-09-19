@@ -11,23 +11,10 @@ users can ping the auth bot a valid key stored in `keys.txt`. the bot then:
 
 2. keeping events/private groups safe from 4chan (as each key can only be used once, and you only need to generate as much as you plan to use).
 
-# How to set up
+# How to use?
 
-1. Add as many 5 digit combos of letter and numbers seperated by new lines in `keys.txt`
-
-2. Change the roles var to your role
-
-3. [create a discord bot](https://discord.com/developers/applications) and invite it to your server
-
-4. change the client secret vars to the secret
-
-5. distribute one key to each person
+Read INSTUCTIONS.MD
 
 # How to use
 
-Mention the bot followed by nothing but a space and your key in the server. `@discordbot#2222 12345`
-
-# Roadmap
-
-* Finish the bot
-
+write a message with NOTHING but your key in a channel the bot can view
