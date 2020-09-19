@@ -1,2 +1,2 @@
 token = "" # bots token
-role = 756872701028859944 # The id of role you wish to assign.
+role = 1234567890 # The id of role you wish to assign.

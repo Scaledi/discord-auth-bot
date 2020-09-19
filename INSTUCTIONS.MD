@@ -119,3 +119,5 @@ Welcome!
 
 1. Distribute keys to each user (some email programs let you mass send emails, (https://www.extendoffice.com/documents/excel/3560-excel-send-personalized-email.html#a1) (you should be able to paste the list straight into exel and it will reconize the new lines))
 2. have them enter it in the auth channel!
+
+![](https://i.imgur.com/gMSPF0N.gif)
