@@ -8,9 +8,9 @@ import string
 keynumCorrect = False
 while keynumCorrect == False:
     keynum = input("How many keys do you want to generate?: ")
-    try: 
-        int(keynum) 
-    except: 
+    try:
+        int(keynum)
+    except:
         #is not int
         print("Hmm, thats not right!")
     else:

@@ -30,3 +30,4 @@ Mention the bot followed by nothing but a space and your key in the server. `@di
 # Roadmap
 
 * Finish the bot
+
