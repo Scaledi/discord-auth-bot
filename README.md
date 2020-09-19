@@ -11,7 +11,7 @@ users can ping the auth bot a valid key stored in `keys.txt`. the bot then:
 
 2. keeping events/private groups safe from 4chan (as each key can only be used once, and you only need to generate as much as you plan to use).
 
-# How to use?
+# How to setup?
 
 Read INSTUCTIONS.MD
 
