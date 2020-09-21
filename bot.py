@@ -5,10 +5,6 @@ import os
 import random
 import string
 import config
-
-# endregion
-# region:parsing
-
 # endregion
 # region: interaction with discord
 client = discord.Client()
@@ -35,18 +31,18 @@ async def on_message(message):
         except ValueError: # if its not a key
             await message.channel.send('**Error:** Not a valid key!')
         else: # if it is a key
-            sucmessage = await message.channel.send('**Key Valid:** Role is being added, and key is now invalidated for future use.')
             keys.remove(str(msg))
             with open("keys.txt", 'w') as output:
                 for row in keys:
                     output.write(str(row) + '\n')
-            try:
+            try: # see if bot can add role
                 await message.author.add_roles(rolename, reason=None, atomic=True)
-            except discord.errors.Forbidden:
-                await sucmessage.delete()
-                await message.channel.send("""**IMPORTAINT NOTE!!!** - ***THIS USER HAS NOT RECEIVED THEIR ROLE!!!!*** and, **the key IS NOW INVALID**. read about why this is at the link provided. 
-https://github.com/Scaledi/discord-auth-bot/wiki/Why-is-key-invalid-without-granting-role%3F
-*please manually grant their role*""")
+            except discord.errors.Forbidden: # if it cant
+                await message.channel.send("""**IMPORTAINT NOTE!!!** - ***THIS USER,*** """ + message.author.mention + """ ***HAS NOT RECEIVED THEIR ROLE!!!!*** and, **the key IS NOW INVALID**. read about why this is at the link provided. 
+<https://github.com/Scaledi/discord-auth-bot/wiki/key-invalid-without-granting-role>
+***please** manually grant* """ + message.author.mention + """ *their role*""")
+            else: # if it can
+                await message.channel.send('**Key Valid:** Role is being added to ' + message.author.mention + ', and key is now invalidated for future use.')
 
 client.run(config.token)
 # endregion
