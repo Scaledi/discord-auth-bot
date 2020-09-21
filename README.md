@@ -5,6 +5,8 @@ users can ping the auth bot a valid key stored in `keys.txt`. the bot then:
 1. grants them a role
 2. removes the key from `keys.txt` making the key invalid for future uses (one time use!)
 
+https://www.youtube.com/watch?v=n1hQ9uP0jac
+
 # What it could be used for
 
 1. keeping a exclusive discord for patrons exclusive!
