@@ -2,3 +2,7 @@ keys.txt
 __pycache__
 testfile.py
 config.py
+pyproject.toml
+poetry.lock
+t.py
+.replit

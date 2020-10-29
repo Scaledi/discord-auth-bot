@@ -1,12 +1,19 @@
-# region: Imports
-import os
 import re
 import random
 import string
-# endregion
-# region Number of keys to generate
-keynumCorrect = False
-while keynumCorrect == False:
+
+def genkey(length, ovr):
+  if not ovr:
+    keytxt = open("keys.txt","a")
+  if ovr:
+    keytxt = open("keys.txt","w")
+  letters_and_digits = string.ascii_uppercase + string.digits
+  result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
+  keytxt.write(result_str + "\n")
+  return result_str
+
+if __name__ == "__main__":
+  while True:
     keynum = input("How many keys do you want to generate?: ")
     try:
         int(keynum)
@@ -16,31 +23,22 @@ while keynumCorrect == False:
     else:
         # is a int
         keynum = int(keynum)
-        keynumCorrect = True
-# endregion
-# region: Overwrite file?
-ovrCorrect = False
-while ovrCorrect == False:
+        break
+    
+  while True:
     ovrwrite = input("""Do you wish to overwrite the file? (Please Write "Yes" Or "No"): """)
     if (re.search(r'(Yes|1)', ovrwrite, re.IGNORECASE)):
-        ovrwrite = True
-        ovrCorrect = True
-        keytxt = open("keys.txt","w")
+      ovrwrite = False # We set overwrite to false here so that in the main loop the file is not overwritten everytime the def runs (a lot - runs for as much as keynum is set to)
+      open("keys.txt", 'w').close() # we just clear the file once 
+      break
     elif (re.search(r'(No|2)', ovrwrite, re.IGNORECASE)):
-        ovrwrite = False
-        ovrCorrect = True
-        keytxt = open("keys.txt","a")
+      ovrwrite = False
+      break
     else:
-        print("Hmm, did'ent quite get that. lets try again!")
-print("""great! we got all that. we will make changes inside a file in the same folder as this program. the file will be named "keys.txt"! for next steps, refer to "INSTRUCTIONS.md".""")
-# endregion
-# region: Output to file
-def getrndstr(length):
-    letters_and_digits = string.ascii_uppercase + string.digits
-    result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
-    keytxt.write(result_str + "\n")
+      print("Hmm, did'ent quite get that. lets try again!")
+  print("""great! we got all that. we will make changes inside a file in the same folder as this program. the file will be named "keys.txt"! for next steps, refer to "INSTRUCTIONS.md".""")
 
-while keynum > 0:
-    getrndstr(int(6))
+  while keynum > 0:
+    keystore = genkey(int(6), ovrwrite)
     keynum = keynum - 1
-# endregion
+    print(keystore)
